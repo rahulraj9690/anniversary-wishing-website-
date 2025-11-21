@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music & Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+<video autoplay loop muted playsinline id="bg-video">
+    <source src="bg3.mp4" type="video/mp4">
+</video>
+
+
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="wishes.html">Wishes</a>
+    <a href="photos.html">Memories</a>
+    <a href="music.html">Music & Notes</a>
+</nav>
+
+<div class="page-container">
+    <h1 class="title-small">Love Notes 💗 & Songs 🎵</h1>
+
+    <div class="note-card">
+        “Your love is my favorite place to be.” 💕
+    </div>
+
+    <div class="note-card">
+        “In your arms, I find my peace.” 🌙
+    </div>
+
+    <div class="music-player" style="color: white;">
+        <h3>Dedicated to lovely couple 🌸💑</h3>
+        <audio controls>
+            <source src="O Re Piy.mp3" type="audio/mp3">
+        </audio><br>
+         <audio controls>
+            <source src="Tum-Ho-Toh.mp3" type="audio/mp3">
+        </audio>
+        <br>
+         <audio controls>
+            <source src="Tum Tak F.mp3" type="audio/mp3">
+        </audio>
+        <br>
+         <audio controls>
+            <source src="Shiddat.mp3" type="audio/mp3">
+        </audio>
+        <br>
+         <audio controls>
+            <source src="Jeene Laga Hoon.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+</div>
+
+<script>
+    const audios = document.querySelectorAll("audio");
+
+    audios.forEach(audio => {
+        audio.addEventListener("play", () => {
+            audios.forEach(otherAudio => {
+                if (otherAudio !== audio) {
+                    otherAudio.pause();
+                    otherAudio.currentTime = 0; 
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

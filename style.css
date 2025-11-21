@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
+
+.navbar a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffe0e8;
+    transform: scale(1.1);
+}
+
+.container, .page-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 70px;
+    color: white;
+}
+
+.subtitle {
+    font-size: 26px;
+    color: white;
+    margin-top: -10px;
+}
+
+.title-small {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: white;
+}
+
+/* Wishes cards */
+.wish-card {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    color: white;
+    animation: fadeIn 2s ease;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.gallery img {
+    width: 75%;
+    border-radius: 15px;
+    animation: zoomIn 1.4s ease;
+    height: 70%;
+    border: #ee9ca7;
+}
+
+/* Notes */
+.note-card {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 18px;
+    margin: 20px auto;
+    width: 75%;
+    color: white;
+    border-radius: 15px;
+    animation: fadeIn 2s ease;
+}
+
+/* Floating Hearts */
+.hearts::before,
+.hearts::after {
+    content: "❤️❤️";
+    position: absolute;
+    top: 100%;
+    font-size: 40px;
+    animation: floatUp 6s infinite;
+}
+
+.hearts::after {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+/* Animations */
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.8; }
+    100% { transform: translateY(-1000px); opacity: 0; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* 🔥 Fullscreen Background Video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Romantic overlay effect */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(0.5) blur(1px);
+    z-index: -1;
+}
